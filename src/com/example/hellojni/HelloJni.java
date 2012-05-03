@@ -61,6 +61,10 @@ public class HelloJni extends Activity
      * installation time by the package manager.
      */
     static {
+        System.loadLibrary("macemu");
+        System.loadLibrary("objc");
+        System.loadLibrary("cf");
+        System.loadLibrary("foundation");
         System.loadLibrary("hello-jni");
     }
 }
