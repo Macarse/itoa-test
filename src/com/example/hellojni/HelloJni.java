@@ -15,56 +15,49 @@
  */
 package com.example.hellojni;
 
-import android.app.Activity;
-import android.widget.TextView;
+import org.cocos2dx.lib.Cocos2dxActivity;
+
 import android.os.Bundle;
+import android.view.View;
+import android.view.View.OnClickListener;
+import android.widget.Button;
 
+public class HelloJni extends Cocos2dxActivity {
+  /** Called when the activity is first created. */
+  @Override
+  public void onCreate(Bundle savedInstanceState) {
+    super.onCreate(savedInstanceState);
 
-public class HelloJni extends Activity
-{
-    /** Called when the activity is first created. */
-    @Override
-    public void onCreate(Bundle savedInstanceState)
-    {
-        super.onCreate(savedInstanceState);
-
-        /* Create a TextView and set its content.
-         * the text is retrieved by calling a native
-         * function.
-         */
-        TextView  tv = new TextView(this);
-        tv.setText( stringFromJNI() );
-        setContentView(tv);
-    }
-
-    /* A native method that is implemented by the
-     * 'hello-jni' native library, which is packaged
-     * with this application.
+    /*
+     * Create a TextView and set its content. the text is retrieved by calling a
+     * native function.
      */
-    public native String  stringFromJNI();
+    final Button button = new Button(this);
+    button.setText(stringFromJNI());
+    setContentView(button);
+    button.setOnClickListener(new OnClickListener() {
 
-    /* This is another native method declaration that is *not*
-     * implemented by 'hello-jni'. This is simply to show that
-     * you can declare as many native methods in your Java code
-     * as you want, their implementation is searched in the
-     * currently loaded native libraries only the first time
-     * you call them.
-     *
-     * Trying to call this function will result in a
-     * java.lang.UnsatisfiedLinkError exception !
-     */
-    public native String  unimplementedStringFromJNI();
+      @Override
+      public void onClick(View v) {
+        button.setText(stringFromJNI());
+      }
+    });
+  }
 
-    /* this is used to load the 'hello-jni' library on application
-     * startup. The library has already been unpacked into
-     * /data/data/com.example.HelloJni/lib/libhello-jni.so at
-     * installation time by the package manager.
-     */
-    static {
-        System.loadLibrary("macemu");
-        System.loadLibrary("objc");
-        System.loadLibrary("cf");
-        System.loadLibrary("foundation");
-        System.loadLibrary("hello-jni");
-    }
+  /*
+   * A native method that is implemented by the 'hello-jni' native library,
+   * which is packaged with this application.
+   */
+  public native String stringFromJNI();
+
+  static {
+    System.loadLibrary("macemu");
+    System.loadLibrary("objc");
+    System.loadLibrary("cf");
+    System.loadLibrary("foundation");
+    System.loadLibrary("cocos2dx");
+    System.loadLibrary("cocosdenshionx");
+    System.loadLibrary("cocosdenshion");
+    System.loadLibrary("hello-jni");
+  }
 }

@@ -4,17 +4,13 @@ include $(CLEAR_VARS)
 MODULE_NAME := cocosdenshion
 
 MODULE_SRC_FILES := \
-    SimpleAudioEngine.cpp \
-		jni/SimpleAudioEngineJni.cpp \
-		./../cocos2dx/platform/android/jni/JniHelper.cpp
+    SimpleAudioEngine.mm
 
 MODULE_C_INCLUDES += \
-		$(MODULE_PATH)/include \
-    $(MODULE_PATH)/../cocos2dx/include \
-    $(MODULE_PATH)/../cocos2dx/platform \
-    $(MODULE_PATH)/../cocos2dx/platform/android/jni
+		$(MODULE_PATH)/../CocosDenshionX/include
 
 MODULE_LDLIBS := -llog
+MODULE_SHARED_LIBRARIES += cocosdenshionx
 
 include $(BUILD_SHARED_LIBRARY)
 

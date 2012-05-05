@@ -22,144 +22,144 @@ OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
 THE SOFTWARE.
 ****************************************************************************/
 
-#include "SimpleAudioEngine.h"
+#include "SimpleAudioEngineX.h"
 #include "jni/SimpleAudioEngineJni.h"
 
-namespace CocosDenshion
+namespace CocosDenshionX
 {
-	static SimpleAudioEngine *s_pEngine = 0;
+	static SimpleAudioEngineX *s_pEngine = 0;
 
-	SimpleAudioEngine::SimpleAudioEngine()
+	SimpleAudioEngineX::SimpleAudioEngineX()
 	{
 
 	}
 
-	SimpleAudioEngine::~SimpleAudioEngine()
+	SimpleAudioEngineX::~SimpleAudioEngineX()
 	{
 
 	}
 
-	SimpleAudioEngine* SimpleAudioEngine::sharedEngine()
+	SimpleAudioEngineX* SimpleAudioEngineX::sharedEngine()
 	{
 		if (! s_pEngine)
 		{
-			s_pEngine = new SimpleAudioEngine();
+			s_pEngine = new SimpleAudioEngineX();
 		}
         
 		return s_pEngine;
 	}
 
-	void SimpleAudioEngine::end()
+	void SimpleAudioEngineX::end()
 	{
 		endJNI();
 	}
 
-	void SimpleAudioEngine::setResource(const char* pszZipFileName)
+	void SimpleAudioEngineX::setResource(const char* pszZipFileName)
 	{
 
 	}
 
-    void SimpleAudioEngine::preloadBackgroundMusic(const char* pszFilePath)
+    void SimpleAudioEngineX::preloadBackgroundMusic(const char* pszFilePath)
 	{
         preloadBackgroundMusicJNI(pszFilePath);
 	}
 
-	void SimpleAudioEngine::playBackgroundMusic(const char* pszFilePath, bool bLoop)
+	void SimpleAudioEngineX::playBackgroundMusic(const char* pszFilePath, bool bLoop)
 	{
         playBackgroundMusicJNI(pszFilePath, bLoop);
 	}
 
-	void SimpleAudioEngine::stopBackgroundMusic(bool bReleaseData)
+	void SimpleAudioEngineX::stopBackgroundMusic(bool bReleaseData)
 	{
 		stopBackgroundMusicJNI();
 	}
 
-	void SimpleAudioEngine::pauseBackgroundMusic()
+	void SimpleAudioEngineX::pauseBackgroundMusic()
 	{
 		pauseBackgroundMusicJNI();
 	}
 
-	void SimpleAudioEngine::resumeBackgroundMusic()
+	void SimpleAudioEngineX::resumeBackgroundMusic()
 	{
 		resumeBackgroundMusicJNI();
 	} 
 
-	void SimpleAudioEngine::rewindBackgroundMusic()
+	void SimpleAudioEngineX::rewindBackgroundMusic()
 	{
 		rewindBackgroundMusicJNI();
 	}
 
-	bool SimpleAudioEngine::willPlayBackgroundMusic()
+	bool SimpleAudioEngineX::willPlayBackgroundMusic()
 	{
 		return true;
 	}
 
-	bool SimpleAudioEngine::isBackgroundMusicPlaying()
+	bool SimpleAudioEngineX::isBackgroundMusicPlaying()
 	{
 		return isBackgroundMusicPlayingJNI();
 	}
 
-	float SimpleAudioEngine::getBackgroundMusicVolume()
+	float SimpleAudioEngineX::getBackgroundMusicVolume()
 	{
 		return getBackgroundMusicVolumeJNI();
 	}
 
-	void SimpleAudioEngine::setBackgroundMusicVolume(float volume)
+	void SimpleAudioEngineX::setBackgroundMusicVolume(float volume)
 	{
 		setBackgroundMusicVolumeJNI(volume);
 	}
 
-	float SimpleAudioEngine::getEffectsVolume()
+	float SimpleAudioEngineX::getEffectsVolume()
 	{
 		return getEffectsVolumeJNI();
 	}
 
-	void SimpleAudioEngine::setEffectsVolume(float volume)
+	void SimpleAudioEngineX::setEffectsVolume(float volume)
 	{
 		setEffectsVolumeJNI(volume);
 	}
 
-	unsigned int SimpleAudioEngine::playEffect(const char* pszFilePath, bool bLoop)
+	unsigned int SimpleAudioEngineX::playEffect(const char* pszFilePath, bool bLoop)
 	{
 		return playEffectJNI(pszFilePath, bLoop);
 	}
 
-	void SimpleAudioEngine::stopEffect(unsigned int nSoundId)
+	void SimpleAudioEngineX::stopEffect(unsigned int nSoundId)
 	{
 		stopEffectJNI(nSoundId);
 	}
 
-	void SimpleAudioEngine::preloadEffect(const char* pszFilePath)
+	void SimpleAudioEngineX::preloadEffect(const char* pszFilePath)
 	{
 		preloadEffectJNI(pszFilePath);
 	}
 
-	void SimpleAudioEngine::unloadEffect(const char* pszFilePath)
+	void SimpleAudioEngineX::unloadEffect(const char* pszFilePath)
 	{
 		unloadEffectJNI(pszFilePath);
 	}
 
-	void SimpleAudioEngine::pauseEffect(unsigned int nSoundId)
+	void SimpleAudioEngineX::pauseEffect(unsigned int nSoundId)
 	{
 		pauseEffectJNI(nSoundId);
 	}
 
-	void SimpleAudioEngine::pauseAllEffects()
+	void SimpleAudioEngineX::pauseAllEffects()
 	{
 		pauseAllEffectsJNI();
 	}
 
-	void SimpleAudioEngine::resumeEffect(unsigned int nSoundId)
+	void SimpleAudioEngineX::resumeEffect(unsigned int nSoundId)
 	{
 		resumeEffectJNI(nSoundId);
 	}
 
-	void SimpleAudioEngine::resumeAllEffects()
+	void SimpleAudioEngineX::resumeAllEffects()
 	{
 		resumeAllEffectsJNI();
 	}
 
-	void SimpleAudioEngine::stopAllEffects()
+	void SimpleAudioEngineX::stopAllEffects()
 	{
 		stopAllEffectsJNI();
 	}

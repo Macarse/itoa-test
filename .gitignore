@@ -17,3 +17,4 @@ local.properties
 .DS_Store
 *.so
 libs/*
+jni/tmp

@@ -29,22 +29,22 @@ THE SOFTWARE.
 #include "Export.h"
 #include <stddef.h>
 
-namespace CocosDenshion {
+namespace CocosDenshionX {
 
 /**
 @class          SimpleAudioEngine
 @brief  		offer a VERY simple interface to play background music & sound effect
 */
-class EXPORT_DLL SimpleAudioEngine
+class EXPORT_DLL SimpleAudioEngineX
 {
 public:
-    SimpleAudioEngine();
-    ~SimpleAudioEngine();
+    SimpleAudioEngineX();
+    ~SimpleAudioEngineX();
 
     /**
     @brief Get the shared Engine object,it will new one when first time be called
     */
-    static SimpleAudioEngine* sharedEngine();
+    static SimpleAudioEngineX* sharedEngine();
 
     /**
     @brief Release the shared Engine object

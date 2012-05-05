@@ -252,7 +252,6 @@ extern "C"
 	unsigned int playEffectJNI(const char* path, bool bLoop)
 	{
 		// int playEffect(String)
-
 		JniMethodInfo methodInfo;
 		int ret = 0;
 
