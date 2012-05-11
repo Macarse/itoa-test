@@ -1,6 +1,5 @@
 /****************************************************************************
-Copyright (c) 2010-2011 cocos2d-x.org
-Copyright (c) 2010      Ricardo Quesada
+Copyright (c) 2010 cocos2d-x.org
 
 http://www.cocos2d-x.org
 
@@ -22,4 +21,30 @@ LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
 THE SOFTWARE.
 ****************************************************************************/
-#include "platform/CCGL.h"
+
+#ifndef __CC_EGLVIEW_PLATFORM_H__
+#define __CC_EGLVIEW_PLATFORM_H__
+
+#include "CCPlatformConfig.h"
+
+#if (CC_TARGET_PLATFORM == CC_PLATFORM_WOPHONE)
+    #include "wophone/CCEGLView_wophone.h"
+#elif (CC_TARGET_PLATFORM == CC_PLATFORM_WIN32)
+    #include "win32/CCEGLView_win32.h"
+#elif (CC_TARGET_PLATFORM == CC_PLATFORM_ANDROID)
+    #include "android/CCEGLView_android.h"
+#elif (CC_TARGET_PLATFORM == CC_PLATFORM_IOS)
+    #include "ios/CCEGLView_ios.h"
+#elif (CC_TARGET_PLATFORM == CC_PLATFORM_MARMALADE)
+	#include "marmalade/CCEGLView_marmalade.h"
+#elif (CC_TARGET_PLATFORM == CC_PLATFORM_LINUX)
+	#include "linux/CCEGLView_linux.h"
+#elif (CC_TARGET_PLATFORM == CC_PLATFORM_BADA)
+	#include "bada/CCEGLView_bada.h"
+#elif (CC_TARGET_PLATFORM == CC_PLATFORM_QNX)
+    #include "qnx/CCEGLView_qnx.h"
+#else
+    #error
+#endif
+
+#endif	// end of __CC_EGLVIEW_PLATFORM_H__
