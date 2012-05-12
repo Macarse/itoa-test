@@ -27,8 +27,8 @@
 
 #import <Availability.h>
 
-//#import "Platforms/CCGL.h"
-#import <CCGL.h>
+#import "Platforms/CCGL.h"
+#import <CGAffineTransform.h>
 
 #import "CCAction.h"
 #import "ccTypes.h"
@@ -517,15 +517,16 @@ enum {
  */
 - (CGPoint)convertToWorldSpaceAR:(CGPoint)nodePoint;
 
-#ifdef __IPHONE_OS_VERSION_MAX_ALLOWED
+
+// #ifdef __IPHONE_OS_VERSION_MAX_ALLOWED
 /** Converts a UITouch to node (local) space coordinates. The result is in Points.
  @since v0.7.1
  */
-- (CGPoint)convertTouchToNodeSpace:(UITouch *)touch;
+// - (CGPoint)convertTouchToNodeSpace:(UITouch *)touch;
 /** Converts a UITouch to node (local) space coordinates. The result is in Points.
  This method is AR (Anchor Relative)..
  @since v0.7.1
  */
-- (CGPoint)convertTouchToNodeSpaceAR:(UITouch *)touch;
-#endif // __IPHONE_OS_VERSION_MAX_ALLOWED
+ // - (CGPoint)convertTouchToNodeSpaceAR:(UITouch *)touch;
+// #endif // __IPHONE_OS_VERSION_MAX_ALLOWED
 @end

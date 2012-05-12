@@ -27,7 +27,7 @@
 
 #include <sys/time.h>
 #import <Foundation/Foundation.h>
-
+#import <CGStuff.h>
 #import "ccTypes.h"
 
 enum {

@@ -49,12 +49,15 @@
  - It can receive iPhone Touches
  - It can receive Accelerometer input
 */
+
 #ifdef __IPHONE_OS_VERSION_MAX_ALLOWED
-@interface CCLayer : CCNode <UIAccelerometerDelegate, CCStandardTouchDelegate, CCTargetedTouchDelegate>
+//@interface CCLayer : CCNode <UIAccelerometerDelegate, CCStandardTouchDelegate, CCTargetedTouchDelegate>
+@interface CCLayer : CCNode
 {
 	BOOL isTouchEnabled_;
 	BOOL isAccelerometerEnabled_;
 }
+
 /** If isTouchEnabled, this method is called onEnter. Override it to change the
  way CCLayer receives touch events.
  ( Default: [[TouchDispatcher sharedDispatcher] addStandardDelegate:self priority:0] )
@@ -265,7 +268,7 @@ the background.
 }
 
 /** creates a CCMultiplexLayer with one or more layers using a variable argument list. */
-+(id) layerWithLayers: (CCLayer*) layer, ... NS_REQUIRES_NIL_TERMINATION;
++(id) layerWithLayers: (CCLayer*) layer, ... ;
 /** initializes a MultiplexLayer with one or more layers using a variable argument list. */
 -(id) initWithLayers: (CCLayer*) layer vaList:(va_list) params;
 /** switches to a certain layer indexed by n. 

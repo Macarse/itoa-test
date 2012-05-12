@@ -22,16 +22,16 @@ OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
 THE SOFTWARE.
 ****************************************************************************/
 #include "MessageJni.h"
-#include "CCDirector.h"
+// #include "CCDirector.h"
 #include "JniHelper.h"
-#include "CCApplication.h"
-#include "CCFileUtils.h"
+// #include "CCApplication.h"
+// #include "CCFileUtils.h"
 
-#include <android/log.h>
 #include <jni.h>
 
+#include <android/log.h>
 
-#if 0
+#if 1
 #define  LOG_TAG    "MessageJni"
 #define  LOGD(...)  __android_log_print(ANDROID_LOG_DEBUG,LOG_TAG,__VA_ARGS__)
 #else
@@ -48,23 +48,28 @@ extern "C"
 
     void Java_org_cocos2dx_lib_Cocos2dxRenderer_nativeRender(JNIEnv* env)
     {
-        cocos2d::CCDirector::sharedDirector()->mainLoop();
+    	LOGD("nativeRender!");
+      //cocos2d::CCDirector::sharedDirector()->mainLoop();
     }
 	
 	// handle onPause and onResume
 	
 	void Java_org_cocos2dx_lib_Cocos2dxRenderer_nativeOnPause()
 	{
-	        CCApplication::sharedApplication().applicationDidEnterBackground();
+		LOGD("nativeOnPause!");
+	        //CCApplication::sharedApplication().applicationDidEnterBackground();
 	}
 	
 	void Java_org_cocos2dx_lib_Cocos2dxRenderer_nativeOnResume()
 	{
+		LOGD("nativeOnResume!");
 	        // Shared OpenGL View instance doesn't exist yet when Activity.onResume is first called
-	        if (CCDirector::sharedDirector()->getOpenGLView())
+	    /*
+	    if (CCDirector::sharedDirector()->getOpenGLView())
 			{
 	            CCApplication::sharedApplication().applicationWillEnterForeground();
 			}
+			*/
 	}
 
 	void showMessageBoxJNI(const char * pszMsg, const char * pszTitle)
@@ -127,7 +132,8 @@ extern "C"
 		jboolean isCopy;
 		str = env->GetStringUTFChars(apkPath, &isCopy);
 		if (isCopy) {
-			cocos2d::CCFileUtils::setResourcePath(str);
+			LOGD("setting nativeSetPaths to: %s", str);
+			//cocos2d::CCFileUtils::setResourcePath(str);
 			env->ReleaseStringUTFChars(apkPath, str);
 		}
 	}

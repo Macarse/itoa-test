@@ -29,9 +29,11 @@
 #import "Support/OpenGL_Internal.h"
 
 #import <Availability.h>
+/*
 #ifdef __IPHONE_OS_VERSION_MAX_ALLOWED
 #import <UIKit/UIKit.h>
 #endif // iPHone
+*/
 
 enum  
 {
@@ -99,7 +101,7 @@ enum
 /* get buffer as UIImage, can only save a render buffer which has a RGBA8888 pixel format */
 -(NSData*)getUIImageAsDataFromBuffer:(int) format;
 /* get buffer as UIImage */
--(UIImage *)getUIImageFromBuffer;
+//-(UIImage *)getUIImageFromBuffer;
 
 #endif // __IPHONE_OS_VERSION_MAX_ALLOWED
 

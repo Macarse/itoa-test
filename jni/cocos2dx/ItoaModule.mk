@@ -4,7 +4,8 @@ include $(CLEAR_VARS)
 MODULE_NAME := cocos2dx
 
 MODULE_SRC_FILES := \
-    platform/android/jni/JniHelper.cpp
+    platform/android/jni/JniHelper.cpp \
+    platform/android/jni/MessageJni.cpp \
 
 MODULE_C_INCLUDES += \
     $(MODULE_PATH)/include \

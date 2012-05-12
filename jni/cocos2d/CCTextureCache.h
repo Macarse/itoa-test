@@ -80,7 +80,7 @@
  * If "key" is nil, then a new texture will be created each time.
  * @since v0.8
  */
--(CCTexture2D*) addCGImage: (CGImageRef) image forKey: (NSString *)key;
+//-(CCTexture2D*) addCGImage: (CGImageRef) image forKey: (NSString *)key;
 
 /** Returns an already created texture. Returns nil if the texture doesn't exist.
  @since v0.99.5

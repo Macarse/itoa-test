@@ -16,39 +16,38 @@
 package com.example.hellojni;
 
 import org.cocos2dx.lib.Cocos2dxActivity;
+import org.cocos2dx.lib.Cocos2dxEditText;
+import org.cocos2dx.lib.Cocos2dxGLSurfaceView;
 
 import android.os.Bundle;
-import android.view.View;
-import android.view.View.OnClickListener;
-import android.widget.Button;
 
 public class HelloJni extends Cocos2dxActivity {
-  /** Called when the activity is first created. */
+  private Cocos2dxGLSurfaceView mGLView;
+
   @Override
   public void onCreate(Bundle savedInstanceState) {
     super.onCreate(savedInstanceState);
 
-    /*
-     * Create a TextView and set its content. the text is retrieved by calling a
-     * native function.
-     */
-    final Button button = new Button(this);
-    button.setText(stringFromJNI());
-    setContentView(button);
-    button.setOnClickListener(new OnClickListener() {
+    // get the packageName,it's used to set the resource path
+    String packageName = getApplication().getPackageName();
+    super.setPackageName(packageName);
 
-      @Override
-      public void onClick(View v) {
-        button.setText(stringFromJNI());
-      }
-    });
+    setContentView(R.layout.helloworld_demo);
+    mGLView = (Cocos2dxGLSurfaceView) findViewById(R.id.helloworld_gl_surfaceview);
+    mGLView.setTextField((Cocos2dxEditText)findViewById(R.id.textField));
   }
 
-  /*
-   * A native method that is implemented by the 'hello-jni' native library,
-   * which is packaged with this application.
-   */
-  public native String stringFromJNI();
+  @Override
+  protected void onPause() {
+      super.onPause();
+      mGLView.onPause();
+  }
+
+  @Override
+  protected void onResume() {
+      super.onResume();
+      mGLView.onResume();
+  }
 
   static {
     System.loadLibrary("macemu");
@@ -56,6 +55,7 @@ public class HelloJni extends Cocos2dxActivity {
     System.loadLibrary("cf");
     System.loadLibrary("foundation");
     System.loadLibrary("cocos2dx");
+    System.loadLibrary("cocos2d");
     System.loadLibrary("cocosdenshionx");
     System.loadLibrary("cocosdenshion");
     System.loadLibrary("hello-jni");

@@ -56,7 +56,7 @@ enum {
 }
 
 /** creates a CCMenu with it's items */
-+ (id) menuWithItems: (CCMenuItem*) item, ... NS_REQUIRES_NIL_TERMINATION;
++ (id) menuWithItems: (CCMenuItem*) item, ... ;
 
 /** initializes a CCMenu with it's items */
 - (id) initWithItems: (CCMenuItem*) item vaList: (va_list) args;
@@ -77,11 +77,11 @@ enum {
 
 
 /** align items in rows of columns */
--(void) alignItemsInColumns: (NSNumber *) columns, ... NS_REQUIRES_NIL_TERMINATION;
+-(void) alignItemsInColumns: (NSNumber *) columns, ... ;
 -(void) alignItemsInColumns: (NSNumber *) columns vaList: (va_list) args;
 
 /** align items in columns of rows */
--(void) alignItemsInRows: (NSNumber *) rows, ... NS_REQUIRES_NIL_TERMINATION;
+-(void) alignItemsInRows: (NSNumber *) rows, ... ;
 -(void) alignItemsInRows: (NSNumber *) rows vaList: (va_list) args;
 
 

@@ -28,8 +28,7 @@
 #import "ccTypes.h"
 
 // OpenGL related
-// #import "Platforms/CCGL.h"
-#import <CCGL.h>
+#import "Platforms/CCGL.h"
 #import "CCProtocols.h"
 
 /** @typedef ccDirectorProjection
@@ -80,7 +79,7 @@ and when to execute the Scenes.
 */
 @interface CCDirector : NSObject
 {
-	CC_GLVIEW	*openGLView_;
+	//CC_GLVIEW	*openGLView_;
 
 	// internal timer
 	NSTimeInterval animationInterval_;
@@ -158,7 +157,7 @@ and when to execute the Scenes.
 /** Whether or not to display the FPS on the bottom-left corner */
 @property (nonatomic,readwrite, assign) BOOL displayFPS;
 /** The OpenGLView, where everything is rendered */
-@property (nonatomic,readwrite,retain) CC_GLVIEW *openGLView;
+// @property (nonatomic,readwrite,retain) CC_GLVIEW *openGLView;
 /** whether or not the next delta time will be zero */
 @property (nonatomic,readwrite,assign) BOOL nextDeltaTimeZero;
 /** Whether or not the Director is paused */

@@ -224,7 +224,7 @@ typedef enum {
  If key is nil, then a new texture will be created each time by the CCTextureCache. 
  @since v0.99.0
  */
-+(id) spriteWithCGImage: (CGImageRef)image key:(NSString*)key;
+// +(id) spriteWithCGImage: (CGImageRef)image key:(NSString*)key;
 
 
 /** Creates an sprite with an CCBatchNode and a rect
@@ -271,7 +271,7 @@ typedef enum {
  If key is nil, then a new texture will be created each time by the CCTextureCache. 
  @since v0.99.0
  */
--(id) initWithCGImage:(CGImageRef)image key:(NSString*)key;
+// -(id) initWithCGImage:(CGImageRef)image key:(NSString*)key;
 
 /** Initializes an sprite with an CCSpriteBatchNode and a rect in points
  */

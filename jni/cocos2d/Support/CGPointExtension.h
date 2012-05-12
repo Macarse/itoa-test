@@ -56,6 +56,7 @@
 
 #import <math.h>
 #import <objc/objc.h>
+#import <CGGeometry.h>
 
 #ifdef __cplusplus
 extern "C" {

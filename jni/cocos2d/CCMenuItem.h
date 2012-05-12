@@ -354,7 +354,7 @@
 @property (nonatomic,readwrite,retain) NSMutableArray *subItems;
 
 /** creates a menu item from a list of items with a target/selector */
-+(id) itemWithTarget:(id)t selector:(SEL)s items:(CCMenuItem*) item, ... NS_REQUIRES_NIL_TERMINATION;
++(id) itemWithTarget:(id)t selector:(SEL)s items:(CCMenuItem*) item, ... ;
 
 /** initializes a menu item from a list of items with a target selector */
 -(id) initWithTarget:(id)t selector:(SEL)s items:(CCMenuItem*) item vaList:(va_list) args;

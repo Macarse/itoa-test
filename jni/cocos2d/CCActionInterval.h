@@ -75,7 +75,7 @@ Example:
 	int last_;
 }
 /** helper contructor to create an array of sequenceable actions */
-+(id) actions: (CCFiniteTimeAction*) action1, ... NS_REQUIRES_NIL_TERMINATION;
++(id) actions: (CCFiniteTimeAction*) action1, ... ;
 /** helper contructor to create an array of sequenceable actions given an array */
 +(id) actionsWithArray: (NSArray*) actions;
 /** creates the action */
@@ -112,7 +112,7 @@ Example:
 	CCFiniteTimeAction *two_;
 }
 /** helper constructor to create an array of spawned actions */
-+(id) actions: (CCFiniteTimeAction*) action1, ... NS_REQUIRES_NIL_TERMINATION;
++(id) actions: (CCFiniteTimeAction*) action1, ... ;
 /** helper contructor to create an array of spawned actions given an array */
 +(id) actionsWithArray: (NSArray*) actions;
 /** creates the Spawn action */

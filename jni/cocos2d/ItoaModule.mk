@@ -5,12 +5,14 @@ MODULE_NAME := cocos2d
 
 MODULE_SRC_FILES := \
     cocos2d.mm \
+    CCDirector.mm \
     
 
 MODULE_C_INCLUDES += \
     $(MODULE_PATH) \
     $(MODULE_PATH)/portIncludes \
     $(MODULE_PATH)/Support \
+    $(MODULE_PATH)/CoreGraphics \
 		$(MODULE_PATH)/../cocos2dx/platform \
 
 MODULE_CFLAGS := \

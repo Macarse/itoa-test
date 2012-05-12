@@ -48,7 +48,7 @@
  Values goes from 0 to 255, where 255 means fully opaque.
  */
 -(void) setOpacity: (GLubyte) opacity;
-@optional
+// @optional
 /** sets the premultipliedAlphaOpacity property.
  If set to NO then opacity will be applied as: glColor(R,G,B,opacity);
  If set to YES then oapcity will be applied as: glColor(opacity, opacity, opacity, opacity );
@@ -105,7 +105,7 @@
 -(void) setString:(NSString*)label;
 /** returns the string that is rendered */
 -(NSString*) string;
-@optional
+// @optional
 /** sets a new label using a CString.
  It is faster than setString since it doesn't require to alloc/retain/release an NString object.
  @since v0.99.0

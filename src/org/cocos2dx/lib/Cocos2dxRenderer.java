@@ -27,6 +27,7 @@ import javax.microedition.khronos.egl.EGLConfig;
 import javax.microedition.khronos.opengles.GL10;
 
 import android.opengl.GLSurfaceView;
+import android.util.Log;
 
 public class Cocos2dxRenderer implements GLSurfaceView.Renderer {
 	private final static long NANOSECONDSPERSECOND = 1000000000L;
@@ -36,8 +37,8 @@ public class Cocos2dxRenderer implements GLSurfaceView.Renderer {
 	private int screenWidth;
 	private int screenHeight;
 	
-    public void onSurfaceCreated(GL10 gl, EGLConfig config) { 
-    	nativeInit(screenWidth, screenHeight); 
+    public void onSurfaceCreated(GL10 gl, EGLConfig config) {
+    	nativeInit(screenWidth, screenHeight);
     	last = System.nanoTime();
     }
     
@@ -56,7 +57,7 @@ public class Cocos2dxRenderer implements GLSurfaceView.Renderer {
     	
     	// should render a frame when onDrawFrame() is called
     	// or there is a "ghost"
-    	nativeRender();   	
+    	nativeRender();
    	
     	// fps controlling
     	if (interval < animationInterval){ 
@@ -71,67 +72,77 @@ public class Cocos2dxRenderer implements GLSurfaceView.Renderer {
     
     public void handleActionDown(int id, float x, float y)
     {
-    	nativeTouchesBegin(id, x, y);
+    	//nativeTouchesBegin(id, x, y);
     }
     
     public void handleActionUp(int id, float x, float y)
     {
-    	nativeTouchesEnd(id, x, y);
+    	//nativeTouchesEnd(id, x, y);
     }
     
     public void handleActionCancel(int[] id, float[] x, float[] y)
     {
-    	nativeTouchesCancel(id, x, y);
+    	//nativeTouchesCancel(id, x, y);
     }
     
     public void handleActionMove(int[] id, float[] x, float[] y)
     {
-    	nativeTouchesMove(id, x, y);
+    	//nativeTouchesMove(id, x, y);
     }
     
     public void handleKeyDown(int keyCode)
     {
-    	nativeKeyDown(keyCode);
+    	//nativeKeyDown(keyCode);
     }
     
     public void handleOnPause(){
-    	nativeOnPause();
+    	//nativeOnPause();
     }
     
     public void handleOnResume(){
-    	nativeOnResume();
+    	//nativeOnResume();
     }
     
     public static void setAnimationInterval(double interval){
     	animationInterval = (long)(interval * NANOSECONDSPERSECOND);
     }
+    /*
     private static native void nativeTouchesBegin(int id, float x, float y);
     private static native void nativeTouchesEnd(int id, float x, float y);
     private static native void nativeTouchesMove(int[] id, float[] x, float[] y);
     private static native void nativeTouchesCancel(int[] id, float[] x, float[] y);
     private static native boolean nativeKeyDown(int keyCode);
+    */
+
     private static native void nativeRender();
+    
+    
     private static native void nativeInit(int w, int h);
+    
+    /*
     private static native void nativeOnPause();
     private static native void nativeOnResume();
-    
+    */
     /////////////////////////////////////////////////////////////////////////////////
     // handle input method edit message
     /////////////////////////////////////////////////////////////////////////////////
     
     public void handleInsertText(final String text) {
-    	nativeInsertText(text);
+    	//nativeInsertText(text);
     }
     
     public void handleDeleteBackward() {
-    	nativeDeleteBackward();
+    	//nativeDeleteBackward();
     }
 
 	public String getContentText() {
-		return nativeGetContentText();
+	  return "?";
+		//return nativeGetContentText();
 	}
 	
+	/*
     private static native void nativeInsertText(String text);
     private static native void nativeDeleteBackward();
     private static native String nativeGetContentText();
+    */
 }

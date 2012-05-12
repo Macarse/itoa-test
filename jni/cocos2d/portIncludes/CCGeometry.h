@@ -102,13 +102,13 @@ public:
 #define CCRectMake(x, y, width, height) CCRect((x), (y), (width), (height))
 
 
-const CCPoint CCPointZero = CCPointMake(0,0);
+//const CCPoint CCPointZero = CCPointMake(0,0);
 
 /* The "zero" size -- equivalent to CCSizeMake(0, 0). */ 
-const CCSize CCSizeZero = CCSizeMake(0,0);
+//const CCSize CCSizeZero = CCSizeMake(0,0);
 
 /* The "zero" rectangle -- equivalent to CCRectMake(0, 0, 0, 0). */ 
-const CCRect CCRectZero = CCRectMake(0,0,0,0);
+//const CCRect CCRectZero = CCRectMake(0,0,0,0);
 
 }//namespace   cocos2d 
 

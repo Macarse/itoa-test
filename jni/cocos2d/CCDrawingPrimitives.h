@@ -31,7 +31,7 @@
 #import <Foundation/Foundation.h>
 
 #ifdef __IPHONE_OS_VERSION_MAX_ALLOWED
-#import <CoreGraphics/CGGeometry.h>	// for CGPoint
+#import <CGStuff.h>	// for CGPoint
 #endif
 
 
